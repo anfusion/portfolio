@@ -30,7 +30,6 @@ let lastClicked;
 clear();
 
 
-
 //OPERATOR FUNCTIONS
 const preDivide = a => b => a / b;
 const preTimes = a => b => a * b;
