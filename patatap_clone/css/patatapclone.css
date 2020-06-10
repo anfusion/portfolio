@@ -8,3 +8,13 @@ canvas {
 	height: 100%;
 	background-color: black;
 }
+
+.heading {
+	font-family: "Lucida Console", Monaco, monospace;
+	text-transform: uppercase;
+	position: absolute;
+	top: 10px;
+	left: 50%;
+	transform: translateX(-50%);
+	color: #a0a0a0;
+}
