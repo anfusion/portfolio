@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/nickytube/static/css/main.b56be4e3.chunk.css",
+    "main.js": "/nickytube/static/js/main.787e0493.chunk.js",
+    "main.js.map": "/nickytube/static/js/main.787e0493.chunk.js.map",
+    "runtime-main.js": "/nickytube/static/js/runtime-main.65010761.js",
+    "runtime-main.js.map": "/nickytube/static/js/runtime-main.65010761.js.map",
+    "static/js/2.03133b37.chunk.js": "/nickytube/static/js/2.03133b37.chunk.js",
+    "static/js/2.03133b37.chunk.js.map": "/nickytube/static/js/2.03133b37.chunk.js.map",
+    "index.html": "/nickytube/index.html",
+    "precache-manifest.a6a18b4c890a42464ae0c843546a43eb.js": "/nickytube/precache-manifest.a6a18b4c890a42464ae0c843546a43eb.js",
+    "service-worker.js": "/nickytube/service-worker.js",
+    "static/css/main.b56be4e3.chunk.css.map": "/nickytube/static/css/main.b56be4e3.chunk.css.map",
+    "static/js/2.03133b37.chunk.js.LICENSE.txt": "/nickytube/static/js/2.03133b37.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.65010761.js",
+    "static/js/2.03133b37.chunk.js",
+    "static/css/main.b56be4e3.chunk.css",
+    "static/js/main.787e0493.chunk.js"
+  ]
+}
