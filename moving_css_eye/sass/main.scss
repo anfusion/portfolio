@@ -1,0 +1,174 @@
+@keyframes move-eye-skew {
+	0% {
+		transform: translateX(53px) translateY(-50px) skewX(5deg) skewY(3deg) scale(0.95);
+	}
+
+	5% {
+		transform: translateX(57px) translateY(-45px) skewX(4.5deg) skewY(2.75deg) scale(0.95);
+	}
+
+	10% {
+		transform: translateX(60px) translateY(-40px) skewX(4deg) skewY(2.5deg) scale(0.95);
+	}
+
+	15% {
+		transform: translateX(63px) translateY(-35px) skewX(4deg) skewY(2.25deg) scale(0.95);
+	}
+
+	20% {
+		transform: translateX(66px) translateY(-30px) skewX(4deg) skewY(2deg) scale(0.95);
+	}
+
+	25% {
+		transform: translateX(67px) translateY(-25px) skewX(4deg) skewY(1.75deg) scale(0.95);
+	}
+
+	30% {
+		transform: translateX(68px) translateY(-20px) skewX(4deg) skewY(1.5deg) scale(0.95);
+	}
+
+	35% {
+		transform: translateX(69px) translateY(-15px) skewX(4deg) skewY(1.25deg) scale(0.95);
+	}
+
+	40% {
+		transform: translateX(70px) translateY(-10px) skewX(4deg) skewY(1deg) scale(0.95);
+	}
+
+	45% {
+		transform: translateX(71px) translateY(-5px) skewX(4deg) skewY(.5deg) scale(0.95);
+	}
+
+	50% {
+		transform: translateX(71px) translateY(0px) skewX(4deg) skewY(0deg) scale(0.95);
+	}
+
+	55% {
+		transform: translateX(71px) translateY(5px) skewX(4deg) skewY(-1deg) scale(0.95);
+	}
+
+	60% {
+		transform: translateX(70px) translateY(10px) skewX(4deg) skewY(-2deg) scale(0.95);
+	}
+
+	65% {
+		transform: translateX(69px) translateY(15px) skewX(4deg) skewY(-2.5deg) scale(0.95);
+	}
+
+	70% {
+		transform: translateX(68px) translateY(20px) skewX(4deg) skewY(-3deg) scale(0.95);
+	}
+
+	75% {
+		transform: translateX(67px) translateY(25px) skewX(4deg) skewY(-3.5deg) scale(0.95);
+	}
+
+	80% {
+		transform: translateX(66px) translateY(30px) skewX(4deg) skewY(-4deg) scale(0.95);
+	}
+
+	85% {
+		transform: translateX(63px) translateY(35px) skewX(4deg) skewY(-4.5deg) scale(0.95);
+	}
+
+	90% {
+		transform: translateX(60px) translateY(40px) skewX(4deg) skewY(-5deg) scale(0.95);
+	}
+
+	95% {
+		transform: translateX(57px) translateY(45px) skewX(4deg) skewY(-5.5deg) scale(0.95);
+	}
+
+	100% {
+		transform: translateX(53px) translateY(-50px) skewX(5deg) skewY(3deg) scale(0.95);
+	}
+}
+
+html {
+	font-size: 62.5%;
+	height: 100%;
+}
+
+body {
+	background: linear-gradient(to bottom, rgba(100, 100, 100, 0.2) 0%, rgba(255, 255, 255, 0.5) 40%, #fff 1000%);
+	background-repeat: no-repeat;
+	box-sizing: border-box;
+	color: #53354A;
+	font-family: "Arial", sans-serif;
+	line-height: 2em;
+	width: 30rem;
+	margin: 20px auto;
+}
+
+.ball {
+	display: inline-block;
+	border-radius: 50%;
+	width: 300px;
+	height: 300px;
+	margin: 0;
+	position: relative;
+	background: radial-gradient(circle at 50% 40%, #fcfcfc, #efeff1 66%, #9b5050 100%);
+}
+
+.ball:after {
+	content: "";
+	position: absolute;
+	top: 5%;
+	left: 10%;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 14%, rgba(255, 255, 255, 0) 24%);
+	transform: translateX(-80px) translateY(-90px) skewX(-20deg);
+}
+
+.iris {
+	width: 40%;
+	height: 40%;
+	margin: 30%;
+	border-radius: 100%;
+	background: radial-gradient(circle at 50% 50%, #208ab4 0%, #6fbfff 30%, #4381b2 100%);
+	transform: translateX(60px) translateY(-60px) skewX(15deg) skewY(2deg);
+	position: absolute;
+	animation: move-eye-skew 5s ease-out infinite;
+}
+
+.iris:before {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 37.5%;
+	height: 37.5%;
+	border-radius: 50%;
+	top: 31.25%;
+	left: 31.25%;
+	background: black;
+}
+
+.iris:after {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 31.25%;
+	height: 31.25%;
+	border-radius: 50%;
+	top: 18.75%;
+	left: 18.75%;
+	background: rgba(255, 255, 255, 0.2);
+}
+
+.ball .shadow {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%);
+	transform: rotateX(90deg) translateZ(-150px);
+	z-index: -1;
+}
+
+.stage {
+	width: 300px;
+	height: 300px;
+	perspective: 1200px;
+	perspective-origin: 50% 50%;
+}
