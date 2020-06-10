@@ -1,9 +1,15 @@
 @import url(https://fonts.googleapis.com/css?family=Syncopate);
 
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;;
+}
 html, body { 
   height: 100%; 
   overflow: hidden; 
 }
+
 body {
   background: radial-gradient(
     circle closest-corner at center 125px,
@@ -12,9 +18,10 @@ body {
   ) no-repeat;
   text-align: center;
 }
-h1 {
+
+h1, h2, p {
   display: inline-block;
-  padding-top: 12rem;
+  padding-top: 8rem;
   font-family: 'Syncopate', sans-serif;
   text-transform: uppercase;
   background: radial-gradient(
@@ -25,16 +32,41 @@ h1 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 p {
   display: block;
-  padding-top: 100px;
-  font-family: 'Syncopate', sans-serif;
-  text-transform: uppercase;
-  background: radial-gradient(
-    circle farthest-corner at center center,
-    #ccc,
-    #333
-  ) no-repeat;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  padding-top: 60px;
 }
+
+.list_header {
+  font-size: 1rem;
+  padding-top: 50px;
+  padding-bottom: 10px;
+  text-decoration: underline;
+}
+
+a {
+  text-decoration: none;
+  color: #cac8c8;
+}
+
+a:hover {
+  color: #ccc;
+}
+
+a:active {
+  color: #222;
+}
+
+a:visited {
+  color: #444;
+}
+
+
+
+
+
+
+
+
+
