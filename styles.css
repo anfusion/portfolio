@@ -16,7 +16,7 @@ body {
     #222,
     black 40%
   ) no-repeat;
-  text-align: center;
+  padding: 10px;
 }
 
 h1, h2, p {
