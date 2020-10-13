@@ -19,7 +19,7 @@ body {
   text-align: center;
 }
 
-h1, h2, p, li {
+h1, h2, p {
   display: inline-block;
   padding-top: 8rem;
   font-family: 'Syncopate', sans-serif;
@@ -43,6 +43,10 @@ p {
   padding-top: 50px;
   padding-bottom: 10px;
   text-decoration: underline;
+}
+
+li {
+  font-family: Courier
 }
 
 a {
