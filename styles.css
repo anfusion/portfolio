@@ -33,8 +33,9 @@ h1, h2, p {
   -webkit-text-fill-color: transparent;
 }
 
-p {
+p.landing_text {
   display: block;
+  font-weight: 600
 }
 
 .list_header {
