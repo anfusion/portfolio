@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS + CSS Clock</title>
+  <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:wght@700&display=swap" rel="stylesheet"> 
+</head>
+<body>
+
+
+    <div class="clock">
+      <div class="clock-face">
+        <div class="hand hour-hand"></div>
+        <div class="hand min-hand"></div>
+        <div class="hand second-hand"></div>
+        <div class="hand center"></div>
+        <div class="number hr3">3</div>
+        <div class="number hr6">6</div>
+        <div class="number hr9">9</div>
+        <div class="number hr12">12</div>
+        </div>
+      </div>
+    </div>
+
+
+  <style>
+    html {
+	    background: #C44D4D url(images/Wood-Grain-Texture-01.png);
+      background-size: cover;
+      background-blend-mode: overlay;
+      font-family: 'Old Standard TT', serif;
+      text-align: center;
+      font-size: 62.5%;
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-size: 2rem;
+      display: flex;
+      flex: 1;
+      min-height: 100vh;
+      align-items: center;
+      font-size: 160%;
+    }
+
+    .clock {
+      width: 30rem;
+      height: 30rem;
+      border: 20px solid white;
+      border-radius: 50%;
+      margin: 50px auto;
+      position: relative;
+      padding: 2rem;
+      font-size: 3rem;
+      color: rgb(225, 225, 225);
+      box-shadow:
+        0 0 0 3px rgba(0,0,0,0.1),
+        inset 0 0 0 4px #EFEFEF,
+        inset 0 0 2px black,
+        0 0 2px rgba(0,0,0)
+    }
+
+
+
+    .clock-face {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform: translateY(-3px); /* account for the height of the clock hands */
+    }
+
+    .hand {
+      width: 50%;
+      height: 6px;
+      background: rgb(24, 24, 24);
+      position: absolute;
+      top: 50%;
+      transform-origin: 100%;
+      transform: rotate(90deg);
+      transition: all 0.05s;
+      transition-timing-function: cubic-bezier(0.1,2.7,.58,1);
+      box-shadow: 0 0 2px rgb(157, 157, 157, 0.7);
+    }
+
+    .hour-hand {
+      width: 28%;
+      left: 22%;
+      height: 8px;
+    }
+
+    .min-hand {
+      width: 40%;
+      left: 10%;
+    }
+
+    .second-hand {
+      height: 4px;
+      background: white;
+    }
+
+    .center {
+      height: 20px;
+      width: 20px;
+      background: white;
+      border-radius: 50%;
+      right: 50%;
+      top: calc(50% + 3px);
+    }
+
+    .number {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      /* box-shadow: 0 0 3px rgba(118, 118, 118, 0.7); */
+      text-shadow: 0px 1px 4px #000000;
+    }
+
+    .hr3 {
+      top: 51%;
+      left: 96%;
+    }
+
+
+    .hr6 {
+      top: 99%;
+      left: 50%;
+    }
+
+
+    .hr9 {
+      top: 52%;
+      left: 4%;
+    }
+
+    .hr12 {
+      top: 6%;
+      left: 50%;
+    }
+
+    @media (max-width: 500px) {
+      .clock {
+        width: 20rem;
+        height: 20rem;
+        border: 10px solid white;
+        padding: 1rem;
+        font-size: 2.5rem;
+
+      }
+      .center {
+      height: 15px;
+      width: 15px;
+      background: white;
+      border-radius: 50%;
+      right: 50%;
+      top: calc(50% + 3px);
+    }
+    }
+  </style>
+
+  <script>
+    
+    const secondHand = document.querySelector('.second-hand');
+    const minuteHand = document.querySelector('.min-hand');
+    const hourHand = document.querySelector('.hour-hand');
+
+    function setDate () {
+      const now     = new Date();
+
+      const seconds = now.getSeconds();
+      const minutes = now.getMinutes();
+      const hours = now.getHours();
+
+      const secondsDeg     = (seconds / 60 * 360) + 90;
+      const minutesDeg     = (minutes / 60 * 360) + 90;
+      const hoursDeg     = (hours / 12 * 360) + ((minutes/60)*30) + 90;
+
+      secondHand.style.transform  = `rotate(${secondsDeg}deg)`;
+      minuteHand.style.transform  = `rotate(${minutesDeg}deg)`;
+      hourHand.style.transform    = `rotate(${hoursDeg}deg)`;
+    }
+    setInterval(setDate, 1000);
+
+  </script>
+</body>
+</html>
