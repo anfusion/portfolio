@@ -2,8 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Flex Panels 💪</title>
   <link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap" rel="stylesheet">
 </head>
 <body>
   <style>
@@ -43,7 +46,7 @@
         font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
         flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
         background 0.2s;
-      font-size: 20px;
+      font-size: 15px;
       background-size: cover;
       background-position: center;
       flex: 1;
@@ -82,12 +85,20 @@
     .panel.open-active > *:last-child { transform: translateY(0); }
 
     .panel p {
+    	margin: 0;
       text-transform: uppercase;
       font-family: 'Amatic SC', cursive;
       text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
       font-size: 2em;
     }
-    
+
+    .panel:nth-child(2) p {
+    	font-family: 'Noto Serif JP', serif !important;
+    }
+    .panel:nth-child(4) p {
+    	font-family: 'Noto Serif JP', serif !important;
+    }
+
     .panel p:nth-child(2) {
       font-size: 4em;
     }
@@ -96,6 +107,66 @@
       flex: 5;
       font-size: 40px;
     }
+
+	@media (max-width: 700px) {
+
+	    .panels {
+	      min-height: 100vh;
+	      overflow: hidden;
+	      display: flex;
+	      flex-direction: column;
+	    }
+
+	    .panel {
+	      transition:
+	        font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+	        flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+	        background 0.2s;
+	      font-size: 20px;
+	      background-size: cover;
+	      background-position: center;
+	      flex: 1;
+	      justify-content: center;
+	      display: flex;
+	      flex-direction: column;
+	      align-items: center;
+	    }
+
+	    /* Flex Children */
+	    .panel > * {
+	      width: 100%;
+	      flex: 1 0 auto;
+	      display: flex;
+	      justify-content: center;
+	      align-items: center;
+	    }
+
+	    .panel > *:first-child {
+	    	transform: translateY(-50%);
+	    	opacity: 0;
+	    }
+	    .panel.open-active > *:first-child {
+	    	transform: translateY(0);
+	    	opacity: 1;
+	    }
+	    .panel > *:last-child {
+	    	transform: translateY(50%);
+	       	opacity: 0;
+	    }
+	    .panel.open-active > *:last-child {
+	    	transform: translateY(0);
+	    	opacity: 1;
+	    }
+	    .panel.open-active > *:nth-child(2) {
+	    	opacity: 0.3;
+	    }
+
+	    .panel.open {
+	      flex: 5;
+	      font-size: 40px;
+	    }
+	}
+
 
   </style>
 
@@ -107,9 +178,9 @@
       <p></p>
     </div>
     <div class="panel panel2">
-      <p>新</p>
+      <p></p>
       <p>音</p>
-      <p>創</p>
+      <p></p>
     </div>
     <div class="panel panel3">
       <p>World</p>
@@ -117,9 +188,9 @@
       <p>Fire</p>
     </div>
     <div class="panel panel4">
-      <p>世</p>
-      <p>界</p>
-      <p>感</p>
+      <p></p>
+      <p>炎</p>
+      <p></p>
     </div>
     <div class="panel panel5">
       <p></p>
