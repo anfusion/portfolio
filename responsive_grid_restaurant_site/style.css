@@ -139,10 +139,6 @@ img {
   grid-area: cta2;
 }
 
-.menu {
-  cursor: pointer;
-}
-
 li { cursor: pointer; }
 button { cursor: pointer; }
 
