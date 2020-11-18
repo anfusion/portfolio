@@ -143,6 +143,8 @@ img {
   cursor: pointer;
 }
 
+li { cursor: pointer; }
+
 .menu ul {
   display: grid;
   grid-gap: 10px;
