@@ -139,6 +139,10 @@ img {
   grid-area: cta2;
 }
 
+.menu {
+  cursor: pointer;
+}
+
 .menu ul {
   display: grid;
   grid-gap: 10px;
