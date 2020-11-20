@@ -56,7 +56,7 @@ function toggleFullScreen (){
 
 function handleScrub(e){
     //x-axis pixel value where scrub is clicked divided by total width of scrub
-    clickedSpotAsFraction = e.clientX / progress.clientWidth;
+    clickedSpotAsFraction = e.offsetX / progress.clientWidth;
     // total duration of video multiplied by fraction acquired above gives us current time 
     video.currentTime = video.duration * clickedSpotAsFraction;
 }
