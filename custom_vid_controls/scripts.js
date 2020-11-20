@@ -40,7 +40,7 @@ function handleProgress(){
 
 function handleScrub(e){
     //x-axis pixel value where scrub is clicked divided by total width of scrub
-    const scrubTime = (e.offsetX / progress.clientWidth) * video.duration;
+    const scrubTime = (e.offsetX / progress.offsetWidth) * video.duration;
     // total duration of video multiplied by fraction acquired above gives us current time 
     video.currentTime = scrubTime;
 }
