@@ -139,7 +139,6 @@ img {
   grid-area: cta2;
 }
 
-li { cursor: pointer; }
 button { cursor: pointer; }
 
 .menu ul {
@@ -150,7 +149,7 @@ button { cursor: pointer; }
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 }
 
-.menu a {
+.can-hover .menu a {
   background: var(--yellow);
   display: block;
   text-decoration: none;

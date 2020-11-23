@@ -101,6 +101,13 @@
   </div>
 
   <script>
+    var canHover = !(matchMedia('(hover: none)').matches);
+    if (canHover) {
+      document.body.classList.add('can-hover');
+    }
+
+    let touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
+
     const navButton = document.querySelector('button[aria-expanded');
     
     function toggleNav({target}){
@@ -108,7 +115,7 @@
       navButton.setAttribute('aria-expanded', !expanded);
     }
 
-    navButton.addEventListener('click', toggleNav);
+    navButton.addEventListener(touchEvent, toggleNav);
   </script>
   
 </body>
