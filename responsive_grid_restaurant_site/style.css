@@ -149,7 +149,7 @@ button { cursor: pointer; }
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 }
 
-.can-hover .menu a {
+.menu a {
   background: var(--yellow);
   display: block;
   text-decoration: none;
