@@ -19,12 +19,42 @@ body {
 }
 
 .player {
-  max-width: 750px;
+  max-width: 53vw;
   border: 5px solid rgba(0,0,0,0.2);
   box-shadow: 0 0 20px rgba(0,0,0,0.2);
   position: relative;
   font-size: 0;
   overflow: hidden;
+}
+
+@media (max-width: 1020px) {
+  .player {
+    max-width: 65vw;
+  }
+}
+
+@media (max-width: 850px) {
+  .player {
+    max-width: 85vw;
+  }
+}
+
+@media (max-width: 850px) {
+  .player {
+    max-width: 85vw;
+  }
+}
+
+@media (max-width: 750px) {
+  .player {
+    max-width: 95vw;
+  }
+}
+
+@media (max-width: 550px) {
+  .player {
+    max-width: 100vw;
+  }
 }
 
 /* This css is only applied when fullscreen is active. */
