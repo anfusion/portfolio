@@ -106,7 +106,7 @@
     //   document.body.classList.add('can-hover');
     // }
 
-    let touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
+    // let touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
 
     const navButton = document.querySelector('button[aria-expanded]');
     
@@ -115,7 +115,7 @@
       navButton.setAttribute('aria-expanded', !expanded);
     }
 
-    navButton.addEventListener(touchEvent, toggleNav);
+    navButton.addEventListener('click', toggleNav);
   </script>
   
 </body>
