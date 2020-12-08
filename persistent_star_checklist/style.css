@@ -30,6 +30,7 @@ svg {
   max-width: 350px;
   background: rgba(255, 255, 255, 0.95);
   box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
 }
 
 h2 {
@@ -78,4 +79,18 @@ h2 {
   padding: 10px;
   outline: 0;
   border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.bottom-btn-wrapper {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.bottom-btn {
+  padding: 10px;
+  outline: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  width: 100%;
 }

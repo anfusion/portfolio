@@ -62,20 +62,34 @@
       <li>Loading stars...</li>
     </ul>
     <form class="add-items">
-      <input type="text" name="item" placeholder="Star name" required>
+      <input type="text" name="item-add" placeholder="Star name" required>
       <input type="submit" value="+ Add star...">
     </form>
+    <div class="bottom-btn-wrapper">
+      <button class="bottom-btn" id="clear-all">Clear all</button>
+      <button class="bottom-btn" id="check-all">Check all</button>
+      <button class="bottom-btn" id="uncheck-all">Uncheck all</button>
+    </div>
   </div>
 
 <script>
 
-  const addItems = document.querySelector('.add-items');
-  const itemsList = document.querySelector('.plates');
-  const items = JSON.parse(localStorage.getItem('items')) || [];
+  const addItems    = document.querySelector('.add-items');
+  const itemsList   = document.querySelector('.plates');
+  let items         = JSON.parse(localStorage.getItem('items')) || [];
+  const clearBtn    = document.querySelector('#clear-all');
+  const checkAllBtn = document.querySelector('#check-all');
+  const uncheckAllBtn = document.querySelector('#uncheck-all');
+
+  addItems.addEventListener('submit', addItem);
+  itemsList.addEventListener('click', toggleDone);
+  clearBtn.addEventListener('click', clearAll);
+  checkAllBtn.addEventListener('click', affectAll);
+  uncheckAllBtn.addEventListener('click', affectAll);
 
   function addItem(e){
     e.preventDefault();
-    text = (this.querySelector('[name=item]')).value;
+    text = (this.querySelector('[name=item-add]')).value;
     const item = {
       text,
       done: false
@@ -86,13 +100,12 @@
     this.reset();
   }
 
-  function populateList(plates = [], platesList) {
-
-    platesList.innerHTML = plates.map((plate, i) => {
+  function populateList(items = [], itemsList) {
+    itemsList.innerHTML = items.map((item, i) => {
       return `
         <li>
-          <input type="checkbox" data-index="${i}" id="item${i}" ${plate.done ? 'checked' : ''} />
-          <label for="item${i}">${plate.text}</label>
+          <input type="checkbox" data-index="${i}" id="item${i}" ${item.done ? 'checked' : ''} />
+          <label for="item${i}">${item.text}</label>
         </li>
       `;
     }).join('');
@@ -109,8 +122,21 @@
     localStorage.setItem('items', JSON.stringify(items));
   }
 
-  addItems.addEventListener('submit', addItem);
-  itemsList.addEventListener('click', toggleDone)
+  function clearAll(){
+    items.splice(0, items.length);
+    storeLocally(items);
+    populateList(items, itemsList);
+  }
+
+  function affectAll(){
+    const isDone = this.id === 'check-all' ? true : false;
+    items = JSON.parse(localStorage.getItem('items')) || [];
+    items.forEach(item => {
+      item.done = isDone;
+    });
+    storeLocally(items);
+    populateList(items, itemsList);
+  }
 
   populateList(items, itemsList);
 
