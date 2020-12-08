@@ -87,6 +87,7 @@
   checkAllBtn.addEventListener('click', affectAll);
   uncheckAllBtn.addEventListener('click', affectAll);
 
+
   function addItem(e){
     e.preventDefault();
     text = (this.querySelector('[name=item-add]')).value;
@@ -106,14 +107,30 @@
         <li>
           <input type="checkbox" data-index="${i}" id="item${i}" ${item.done ? 'checked' : ''} />
           <label for="item${i}">${item.text}</label>
+          <span id="${i}" class="delete">X</span>
         </li>
       `;
     }).join('');
   }
 
   function toggleDone(e){
+    console.log('toggledone');
+    console.log(e.target);
+
+    if(e.target.matches('span')) deleteItem(e.target);
     if(!e.target.matches('input')) return;
     items[e.target.dataset.index].done = !items[e.target.dataset.index].done;
+    storeLocally(items);
+    populateList(items, itemsList);
+  }
+
+  function deleteItem(target){
+    console.log('deleteItem');
+    console.log(target.id);
+
+    // if(!e.target.matches('span')) return;
+    index = target.id
+    items.splice(index, 1);
     storeLocally(items);
     populateList(items, itemsList);
   }
@@ -138,7 +155,15 @@
     populateList(items, itemsList);
   }
 
+
+
   populateList(items, itemsList);
+
+  // const deleteBtns  = document.querySelectorAll('.delete');
+  // deleteBtns.forEach(deleteBtn => {
+  //   console.log('adf');
+  //   deleteBtn.addEventListener('click', deleteItem)
+  // })
 
 </script>
 
