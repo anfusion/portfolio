@@ -128,7 +128,12 @@ a:visited {
   }
 }
 
-
+.credits {
+    color: black;
+    background: rgba(255,255,255,0.8);
+    font-family: monospace;
+    padding: 5px;
+}
 
 
 
