@@ -1,5 +1,9 @@
-**/1207cafe
 flex_panels/.DS_Store
-.DS_Store
-.DS_Store
 nickytube/
+node_modules/
+.DS_Store
+*.log
+.idea
+haters/
+variables.env
+variables.env.now
